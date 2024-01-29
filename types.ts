@@ -7,12 +7,12 @@ type Base = {
 };
 
 export interface Post extends Base {
-  title: string;
   author: Author;
   body: Block[];
   categories: Category[];
   mainImage: Image;
   slug: Slug;
+  title: string;
   description: string;
 }
 
@@ -22,18 +22,22 @@ interface Author extends Base {
   name: string;
   slug: Slug;
 }
+
 interface Image {
   _type: "image";
   asset: Reference;
 }
+
 interface Reference {
   _type: "slug";
   current: string;
 }
+
 interface Slug {
   _type: "slug";
   current: string;
 }
+
 interface Block {
   _key: string;
   _type: "block";
@@ -41,13 +45,15 @@ interface Block {
   markDefs: any[];
   style: "normal" | "h1" | "h2" | "h3" | "h4" | "blockquote";
 }
+
 interface Span {
   _key: string;
   _type: "span";
   marks: string[];
   text: string;
 }
-interface Category {
+
+interface Category extends Base {
   description: string;
   title: string;
 }
