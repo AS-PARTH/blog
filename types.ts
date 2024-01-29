@@ -48,7 +48,6 @@ interface Span {
   text: string;
 }
 interface Category {
-  _id: Key | null | undefined;
   description: string;
   title: string;
 }
