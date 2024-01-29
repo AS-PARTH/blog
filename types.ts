@@ -7,7 +7,7 @@ type Base = {
 };
 
 export interface Post extends Base {
-  title: ReactI18NextChildren | Iterable<ReactI18NextChildren>;
+  title: string;
   author: Author;
   body: Block[];
   categories: Category[];
